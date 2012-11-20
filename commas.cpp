@@ -20,7 +20,7 @@ std::ostream& commas::add_commas(std::ostream& out) const
 	{
 		unsigned temp2 = temp;
 		unsigned a = input%1000;
-		out << temp2 << "," << a;
+		out << temp2 << ',' << a;
 	}
 	temp = input/1000000;
 	if(temp > 0 && temp < 1000)
@@ -30,7 +30,7 @@ std::ostream& commas::add_commas(std::ostream& out) const
 		unsigned a = temp%1000;
 		temp /= 1000;
 		unsigned b = temp%1000;
-		out << temp3 << "," << b << "," << a;
+		out << temp3 << ',' << b << ',' << a;
 	}
 	temp = input/1000000000;
 	if(temp > 0)
@@ -42,7 +42,7 @@ std::ostream& commas::add_commas(std::ostream& out) const
 		unsigned b = temp%1000;
 		temp /= 1000;
 		unsigned c = temp%1000;
-		out << temp2 << "," << c << "," << b << "," << a;
+		out << temp2 << ',' << c << ',' << b << ',' << a;
 	}
 
 	return out;

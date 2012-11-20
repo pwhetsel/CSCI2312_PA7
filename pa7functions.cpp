@@ -16,6 +16,7 @@ void pa7functions::greeting()
 	std::cout << "followed by enter to continue.  ";
 	int in;
 	std::cin >> in;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::cout << std::endl;
 }
 void pa7functions::populate_list(list<unsigned> holder)
@@ -24,8 +25,10 @@ void pa7functions::populate_list(list<unsigned> holder)
 	bool exit = false;
 	while (exit != true)
 	{
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "\nPlease enter a positive integer to be converted('finished' when done): ";
-		std::cin >> line;
+		getline (std::cin, line);
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		if (line == "finished")
 		{
 			exit = true;
@@ -36,6 +39,7 @@ void pa7functions::populate_list(list<unsigned> holder)
 			unsigned temp;
 			input >> temp;
 			holder.push_front(temp);
+			line.clear();
 		}
 	}
 }
