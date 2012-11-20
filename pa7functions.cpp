@@ -40,7 +40,7 @@ void pa7functions::populate_list(list<unsigned>& holder)
 		}
 	}
 }
-void output_list(list<unsigned>& unsigned_list)
+void pa7functions::output_list(list<unsigned>& unsigned_list)
 {
 	std::cout << std::setw(22) << std::setfill(' ') << std::right << "Original";
 	std::cout << std::setw(22) << std::setfill(' ') << std::right << "Commas Added";
