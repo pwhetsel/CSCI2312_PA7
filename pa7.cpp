@@ -6,25 +6,30 @@
 //and inserting commas in the standard position.  These results are in a two columns with
 //a heading for each column.
 
-#include "commas.h"
-#include "list.h"
-#include "node.h"
 #include "pa7functions.h"
-#include "tertiary.h"
+
 
 int main()
 {
-	////this is for testing
-	//std::cout << "Enter a number to convert: ";
-	//unsigned in;
-	//std::cin >> in;
-	//std::cout << "\n" << commas(in) << "  " << tertiary(in) << "\n";
-	////this is for testing
 
-	while (!std::cin.eof())
+	pa7functions::greeting();
+
+	list<unsigned> unsigned_list;
+	pa7functions::populate_list(unsigned_list);
+
+	std::cout << std::setw(10) << std::right << "Original";
+	std::cout << std::setw(13) << std::right << "Commas Added";
+	std::cout << std::setw(22) << std::right << "Base3 Conversion";
+	std::cout << std::endl;
+	while(!unsigned_list.empty())
 	{
-		std::cout << "\nPlease enter an integer to be stored(eof to finish): ";
-		int in;
-		std::cin >> in;
+		std::cout << std::setw(10) << std::right << unsigned_list.front();
+		std::cout << std::setw(13) << std::right << commas(unsigned_list.front());
+		std::cout << std::setw(22) << std::right << tertiary(unsigned_list.front());
+		std::cout << std::endl;
+		unsigned_list.pop_front();
 	}
+
+	pa7functions::exit_program();
+
 }
