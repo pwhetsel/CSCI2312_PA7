@@ -1,0 +1,43 @@
+//Patrick Whetsel
+//CSCI 2312 Fall 2012
+//node.tem
+//template for node class
+
+template <typename T> 
+node<T>::node(const T& val=T(), node<T>* n=0): datafield(val), linkfield(n){};
+
+template <typename T> 
+void node<T>::set_data(const T& val)
+{
+	datafield = val;
+}
+
+template <typename T> 
+void node<T>::set_link(const node<T>* n) 
+{
+	linkfield = n;
+}
+
+template <typename T>     
+T node<T>::get_data() const
+{
+	return datafield;
+}
+
+template <typename T>     
+T node<T>::get_data()
+{
+	return datafield;
+}
+
+template <typename T>     
+const node<T>* node<T>::get_link() const
+{
+	return linkfield;
+}
+
+template <typename T>     
+node<T>* node<T>::get_link() 
+{
+	return linkfield;
+}

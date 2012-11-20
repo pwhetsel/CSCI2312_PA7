@@ -1,0 +1,139 @@
+//Patrick Whetsel
+//CSCI 2312 Fall 2012
+//list.tem
+//template for list class
+
+template<typename T>
+list<T>::list():head(0), used(0) 
+{
+}
+
+template<typename T>
+list<T>::list(const list<T>&)
+{
+	
+}
+
+template<typename T>
+list<T>::~list()
+{
+	clear();
+}
+
+template<typename T>
+void list<T>::pop_front()
+{
+	if (used > 0)
+	{
+		node<T> * temp =  head;
+		head = head -> get_link();
+		delete temp;
+		temp = 0;
+		--used;
+	} 
+}
+
+template<typename T>
+void list<T>::clear()
+{
+	while(head!=0)
+	{
+		pop_front();
+	}
+}
+
+template<typename T>
+void list<T>::push_front(const T& val)
+{
+	node<T>* temp = new node<T>(val, head);
+	head = temp;
+	++used;    
+}
+
+template<typename T>
+node<T>* list<T>::find(const T& val)
+{
+	node<T>* temp = head;
+	for (int i = 0; i < used; ++i)
+	{
+		if(temp->get_data() == val)
+		{
+			std::cout<<"\nFound at: "<< i << "\n";
+			return temp;
+		}
+		else
+		{
+			temp = temp->get_link();
+		}
+	}
+
+	return 0;
+}
+
+template<typename T>
+bool list<T>::erase_one (const T& target)
+{
+	node<T>*t1;
+	node<T>*t2;
+	t1 = head;
+	t2 = head;
+	
+	if(t1->data==target)
+	{
+		head=head->get_link;
+		delete t1;
+		--used;
+		return true;
+	}
+	t1=t2->set_link(t2->get_link);
+	while(t2 != 0)
+	{
+		if(t2->get_data==target)
+		{
+			t1->set_link(t2->link);
+			delete t2;
+			--used;
+			return true;
+		}
+		t2=t1->get_link;
+		t1=t1->get_link;
+		return false;
+	}
+}
+
+template<typename T>
+unsigned list<T>::erase(const T& target)
+{
+	return 0;
+}
+
+template<typename T>
+unsigned list<T>::size() const
+{
+	return used;
+}
+
+template<typename T>
+bool list<T>::empty() const
+{
+	return used == 0;
+}
+
+template<typename T>
+const T& list<T>::front() const
+{
+	return head->get_data();
+}
+
+template<typename T>
+std::ostream& operator << (std::ostream& out, const list<T>& lObject)
+{
+	node<T>* temp = lObject.head;
+	for (unsigned i = 0; i<lObject.used; ++i)
+	{
+		std::cout << temp->get_data();
+		temp = temp->get_link();
+	}
+	
+	return out;
+}
