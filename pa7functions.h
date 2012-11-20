@@ -23,10 +23,10 @@ namespace pa7functions
 	void greeting();
 	//Pre: requires linked list to store unsigned ints
 	//Post: list is populated by user entered unsigned ints
-	void populate_list(list<unsigned>);
+	void populate_list(list<unsigned>&);
 	//Pre: requires linked list with stored unsigned ints
 	//Post: list is output in columnar format, converted to base3 and with commas added
-	void output_list(list<unsigned>);
+	void output_list(list<unsigned>&);
 	//Pre: none
 	//Post: asks for user input to exit program
 	int exit_program();

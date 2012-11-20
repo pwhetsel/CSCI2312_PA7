@@ -4,6 +4,7 @@
 //function prototypes for tertiary class
 
 #include <iomanip>
+#include <iostream>
 
 #ifndef _tertiary_h
 #define _tertiary_h

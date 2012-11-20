@@ -14,21 +14,18 @@ void pa7functions::greeting()
 	std::cout << "3 form.  These two converted numbers will be\n";
 	std::cout << "displayed in two columns.  Please press any key\n";
 	std::cout << "followed by enter to continue.  ";
-	int in;
-	std::cin >> in;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	std::cout << std::endl;
+	std::string in;
+	getline (std::cin, in);
+	std::cin.clear();
 }
-void pa7functions::populate_list(list<unsigned> holder)
+void pa7functions::populate_list(list<unsigned>& holder)
 {
 	std::string line;
 	bool exit = false;
 	while (exit != true)
 	{
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "\nPlease enter a positive integer to be converted('finished' when done): ";
 		getline (std::cin, line);
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		if (line == "finished")
 		{
 			exit = true;
@@ -43,7 +40,7 @@ void pa7functions::populate_list(list<unsigned> holder)
 		}
 	}
 }
-void output_list(list<unsigned> unsigned_list)
+void output_list(list<unsigned>& unsigned_list)
 {
 	std::cout << std::setw(10) << std::right << "Original";
 	std::cout << std::setw(13) << std::right << "Commas Added";

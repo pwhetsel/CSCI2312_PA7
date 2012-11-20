@@ -3,6 +3,9 @@
 //node.h
 //function prototypes for node class
 
+#include <iostream>
+#include <Windows.h>
+
 #ifndef _node_h
 #define _node_h
 

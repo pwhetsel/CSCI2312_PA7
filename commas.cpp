@@ -10,6 +10,7 @@ commas::commas(unsigned in):input(in)
 }
 std::ostream& commas::add_commas(std::ostream& out) const
 {
+	//std::cout << "\ndebug add_commas called";
 	unsigned temp;
 	temp = input/1000;
 	if(temp < 1)
@@ -20,7 +21,7 @@ std::ostream& commas::add_commas(std::ostream& out) const
 	{
 		unsigned temp2 = temp;
 		unsigned a = input%1000;
-		out << temp2 << ',' << a;
+		out << std::setw(22) << std::setfill(' ') << temp2 << ',' << a;
 	}
 	temp = input/1000000;
 	if(temp > 0 && temp < 1000)
@@ -30,7 +31,7 @@ std::ostream& commas::add_commas(std::ostream& out) const
 		unsigned a = temp%1000;
 		temp /= 1000;
 		unsigned b = temp%1000;
-		out << temp3 << ',' << b << ',' << a;
+		out << std::setw(22) << std::setfill(' ') << temp3 << ',' << b << ',' << a;
 	}
 	temp = input/1000000000;
 	if(temp > 0)
@@ -42,7 +43,7 @@ std::ostream& commas::add_commas(std::ostream& out) const
 		unsigned b = temp%1000;
 		temp /= 1000;
 		unsigned c = temp%1000;
-		out << temp2 << ',' << c << ',' << b << ',' << a;
+		out << std::setw(22) << std::setfill(' ') << temp2 << ',' << c << ',' << b << ',' << a;
 	}
 
 	return out;

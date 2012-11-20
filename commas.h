@@ -4,6 +4,7 @@
 //function prototypes for commas class
 
 #include <iomanip>
+#include <iostream>
 
 #ifndef _commas_h
 #define _commas_h

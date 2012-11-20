@@ -5,7 +5,10 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <cassert>
 #include "node.h"
+#include <Windows.h>
+
 
 #ifndef _list_h
 #define _list_h
@@ -48,7 +51,7 @@ public:
 	bool empty() const;
 	//Pre: used > 0
 	//Post : returns data of head node
-	const T& front() const;
+	const T front() const;
 	//Pre: list with used > 0
 	//Post: outputs data of each node in list
 	friend std::ostream& operator << <T>(std::ostream&, const list<T>&);

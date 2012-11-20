@@ -10,6 +10,7 @@ tertiary::tertiary(unsigned in):input(in)
 }
 std::ostream& tertiary::to_tertiary(std::ostream& out) const
 {
+	//std::cout << "\ndebug to_tertiary called\n";
 	unsigned temp,one,two,three,four,five,six,seven,eight,nine,ten;
 	unsigned eleven, twelve, thirteen, fourteen, fifteen, sixteen;
 	unsigned seventeen, eighteen, nineteen, twenty, twentyone;
