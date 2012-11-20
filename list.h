@@ -7,7 +7,6 @@
 #include <iostream>
 #include <cassert>
 #include "node.h"
-#include <Windows.h>
 
 
 #ifndef _list_h

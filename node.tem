@@ -27,8 +27,6 @@ T node<T>::get_data() const
 template <typename T>     
 T node<T>::get_data()
 {
-	//std::cout << "\ndebug get_data called\n";
-	//Sleep (1000);
 	return datafield;
 }
 

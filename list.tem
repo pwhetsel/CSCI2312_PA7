@@ -123,8 +123,6 @@ template<typename T>
 const T list<T>::front() const
 {
 	assert(head != 0);
-	//std::cout << "\ndebug .front called";
-	//Sleep (1000);
 	return head->get_data();
 }
 

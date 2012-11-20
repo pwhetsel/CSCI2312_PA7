@@ -7,7 +7,6 @@
 //a heading for each column.
 
 #include "pa7functions.h"
-#include <Windows.h>
 
 int main()
 {
@@ -17,21 +16,16 @@ int main()
 	list<unsigned> unsigned_list;
 	pa7functions::populate_list(unsigned_list);
 
-	std::cout << std::setw(22) << std::setfill(' ') << std::right << "Original";
+	std::cout << std::setw(22) << std::setfill(' ') << std::right << "\nOriginal";
 	std::cout << std::setw(22) << std::setfill(' ') << std::right << "Commas Added";
-	std::cout << std::setw(22) << std::setfill(' ') << std::right << "Base3 Conversion";
+	std::cout << std::setw(32) << std::setfill(' ') << std::right << "Base3 Conversion";
 	std::cout << std::endl;
 	while(!unsigned_list.empty())
 	{
-		//Sleep (1000);
 		std::cout << std::setw(22) << std::setfill(' ') << std::right << unsigned_list.front();
-		//Sleep (1000);
-		std::cout << std::setw(22) << std::setfill(' ') << std::right << commas(unsigned_list.front());
-		//Sleep (1000);
-		std::cout << std::setw(22) << std::setfill(' ') << std::right << tertiary(unsigned_list.front());
-		//Sleep (1000);
-		std::cout << std::setw(22) << std::setfill(' ') << std::endl;
-		//Sleep (1000);
+		std::cout << commas(unsigned_list.front());
+		std::cout << tertiary(unsigned_list.front());
+		std::cout << std::endl;
 		unsigned_list.pop_front();
 	}
 

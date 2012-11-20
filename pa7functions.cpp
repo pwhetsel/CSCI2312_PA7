@@ -42,15 +42,15 @@ void pa7functions::populate_list(list<unsigned>& holder)
 }
 void output_list(list<unsigned>& unsigned_list)
 {
-	std::cout << std::setw(10) << std::right << "Original";
-	std::cout << std::setw(13) << std::right << "Commas Added";
-	std::cout << std::setw(22) << std::right << "Base3 Conversion";
+	std::cout << std::setw(22) << std::setfill(' ') << std::right << "Original";
+	std::cout << std::setw(22) << std::setfill(' ') << std::right << "Commas Added";
+	std::cout << std::setw(32) << std::setfill(' ') << std::right << "Base3 Conversion";
 	std::cout << std::endl;
 	while(!unsigned_list.empty())
 	{
-		std::cout << std::setw(10) << std::right << unsigned_list.front();
-		std::cout << std::setw(13) << std::right << commas(unsigned_list.front());
-		std::cout << std::setw(22) << std::right << tertiary(unsigned_list.front());
+		std::cout << std::setw(22) << std::setfill(' ') << std::right << unsigned_list.front();
+		std::cout << commas(unsigned_list.front());
+		std::cout << tertiary(unsigned_list.front());
 		std::cout << std::endl;
 		unsigned_list.pop_front();
 	}

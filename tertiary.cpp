@@ -10,7 +10,6 @@ tertiary::tertiary(unsigned in):input(in)
 }
 std::ostream& tertiary::to_tertiary(std::ostream& out) const
 {
-	//std::cout << "\ndebug to_tertiary called\n";
 	unsigned temp,one,two,three,four,five,six,seven,eight,nine,ten;
 	unsigned eleven, twelve, thirteen, fourteen, fifteen, sixteen;
 	unsigned seventeen, eighteen, nineteen, twenty, twentyone;
@@ -57,7 +56,7 @@ std::ostream& tertiary::to_tertiary(std::ostream& out) const
 	temp /= 3;
 	twentyone = temp%3;
 	
-	out <<twentyone<<twenty<<nineteen<<eighteen<<seventeen<<sixteen;
+	out << std::setw(12) << std::setfill(' ') << twentyone<<twenty<<nineteen<<eighteen<<seventeen<<sixteen;
 	out <<fifteen<<fourteen<<thirteen<<twelve<<eleven;
 	out <<ten<<nine<<eight<<seven<<six<<five<<four<<three<<two<<one;
 
